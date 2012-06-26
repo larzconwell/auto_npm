@@ -1,11 +1,17 @@
 #!/usr/bin/env node
 
-var fs      = require('fs')
-  , path    = require('path')
+//
+// Dependencies
+var path    = require('path')
   , package = require('../package')
-  , cd      = process.cwd()
-  , args    = process.argv.slice(2)
-  , enabled = false
+  , runner  = require('../lib/auto_npm');
+
+//
+// Vars
+var cd       = process.cwd()
+  , args     = process.argv.slice(2)
+  , enabled  = false
+  , updating = false
   , gitDir
   , help
   , arg;
@@ -50,6 +56,10 @@ while(args.length) {
     case '--disable':
       enabled = false;
       break;
+    case '-u':
+    case '--updated':
+      updating = true;
+      break;
   }
 }
 
@@ -59,9 +69,15 @@ gitDir = path.existsSync(path.join(cd, '.git'));
 if(!gitDir) throw new Error('The Directory "' + cd + '" is not a git repo.');
 
 //
+// If updating arg is set then we need to update NPM package
+if(updating) {
+  runner.update();
+}
+
+//
 // Enable Auto NPM or disable it
 if(enabled) {
-  // Start watching for commits
+  runner.enable();
 } else {
-  // Disable watching for commits
+  runner.disable();
 }
