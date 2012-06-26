@@ -12,6 +12,7 @@ var cd       = process.cwd()
   , args     = process.argv.slice(2)
   , enabled  = false
   , updating = false
+  , force    = false
   , gitDir
   , help
   , arg;
@@ -27,6 +28,7 @@ help = [
   , ''
   , 'Usage'
   , '  --enable, -e   # Enable Auto NPM in a git repo'
+  , '  --force, -f    # Force Auto NPM to rewrite any existing Git hooks'
   , '  --disable, -d  # Disable Auto NPM in a git repo'
   , '  --update, -u   # Updated the NPM package for the current repo'
   , '  --help, -h     # Dipslay this help dialog'
@@ -49,6 +51,10 @@ while(args.length) {
       console.log(help);
       process.exit(0);
       break;
+    case '-f':
+    case '--force':
+      force = true;
+      break;
     case '-e':
     case '--enable':
       enabled = true;
@@ -69,7 +75,6 @@ while(args.length) {
 gitDir = path.existsSync(path.join(cd, '.git'));
 if(!gitDir) throw new Error('The Directory "' + cd + '" is not a git repo.');
 
-
 //
 // If updating arg is set then we need to update NPM package
 if(updating) {
@@ -78,8 +83,14 @@ if(updating) {
   //
   // Enable Auto NPM or disable it
   if(enabled) {
-    runner.enable();
+    // If force is true send it as an options
+    if(force) {
+      runner.enable({ force: true });
+    } else runner.enable();
   } else {
-    runner.disable();
+    // If force is true send it as an options
+    if(force) {
+      runner.disable({ force: true });
+    } else runner.disable();
   }
 }
