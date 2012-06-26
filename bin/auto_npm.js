@@ -58,7 +58,7 @@ while(args.length) {
       enabled = false;
       break;
     case '-u':
-    case '--updated':
+    case '--update':
       updating = true;
       break;
   }
@@ -68,6 +68,7 @@ while(args.length) {
 // Check if directory is a Git repo
 gitDir = path.existsSync(path.join(cd, '.git'));
 if(!gitDir) throw new Error('The Directory "' + cd + '" is not a git repo.');
+
 
 //
 // If updating arg is set then we need to update NPM package
