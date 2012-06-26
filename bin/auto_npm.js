@@ -28,6 +28,7 @@ help = [
   , 'Usage'
   , '  --enable, -e   # Enable Auto NPM in a git repo'
   , '  --disable, -d  # Disable Auto NPM in a git repo'
+  , '  --update, -u   # Updated the NPM package for the current repo'
   , '  --help, -h     # Dipslay this help dialog'
 ].join('\n');
 
@@ -72,12 +73,12 @@ if(!gitDir) throw new Error('The Directory "' + cd + '" is not a git repo.');
 // If updating arg is set then we need to update NPM package
 if(updating) {
   runner.update();
-}
-
-//
-// Enable Auto NPM or disable it
-if(enabled) {
-  runner.enable();
 } else {
-  runner.disable();
+  //
+  // Enable Auto NPM or disable it
+  if(enabled) {
+    runner.enable();
+  } else {
+    runner.disable();
+  }
 }
