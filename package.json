@@ -1,0 +1,30 @@
+{
+    "name": "Auto NPM"
+  , "description": "Automatically updated NPM packages when you submit a commit"
+  , "keywords": [
+      "git"
+    , "commit"
+    , "auto"
+    , "update"
+    , "version"
+    , "control"
+  ]
+  , "version": "0.0.1"
+  , "author": "Larz Conwell <larzconwell@gmail.com>"
+  , "devDependencies": {}
+  , "dependencies": {
+    "git": "*"
+  }
+  , "bin": {
+    "auto-npm": "./bin/auto_npm.js"
+  }
+  , "main": "./lib/auto_npm.js"
+  , "repository": {
+      "type": "git"
+    , "url": "git://github.com/larzconwell/auto-npm.git"
+  }
+  , "preferGlobal": true
+  , "engines": {
+    "node": "*"
+  }
+}
