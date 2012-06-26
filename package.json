@@ -1,6 +1,6 @@
 {
     "name": "Auto NPM"
-  , "description": "Automatically updated NPM packages when you submit a commit"
+  , "description": "Automatically updated NPM packages when you submit a commit that updates the version number in `package.json`"
   , "keywords": [
       "git"
     , "commit"
