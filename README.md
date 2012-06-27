@@ -12,3 +12,6 @@ Automatically update a NPM package when you make a commit that changes the versi
 
 
 _Note_: There hasn't been much success using `git commit -a`, but `git commit -m` works fine.
+
+####Todo
+- Nodejs 0.8 support(_I can't do this currently until the Ubuntu ppa comes out with an updated_)
