@@ -3,6 +3,7 @@
 //
 // Dependencies
 var path    = require('path')
+  , compat  = require('../lib/compat')
   , package = require('../package')
   , runner  = require('../lib/auto_npm');
 
@@ -72,7 +73,7 @@ while(args.length) {
 
 //
 // Check if directory is a Git repo
-gitDir = path.existsSync(path.join(cd, '.git'));
+gitDir = compat.existsSync(path.join(cd, '.git'));
 if(!gitDir) throw new Error('The Directory "' + cd + '" is not a git repo.');
 
 //
