@@ -9,3 +9,6 @@ Automatically update a NPM package when you make a commit that changes the versi
 - `--force` or `-f` Force Auto NPM to rewrite any exists Git hooks that we need
 - `--update` or `-u` Updated the NPM package for the current repo
 - `--help` or `-h` Display the help dialog
+
+
+_Note_: There hasn't been much success using `git commit -a`, but `git commit -m` works fine.
