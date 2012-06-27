@@ -1,5 +1,5 @@
 {
-    "name": "Auto NPM"
+    "name": "auto_npm"
   , "description": "Automatically updated NPM packages when you submit a commit that updates the version number in `package.json`"
   , "keywords": [
       "git"
@@ -12,7 +12,7 @@
   , "version": "0.0.2"
   , "author": "Larz Conwell <larzconwell@gmail.com>"
   , "bin": {
-    "auto-npm": "./bin/auto_npm.js"
+    "auto_npm": "./bin/auto_npm.js"
   }
   , "main": "./lib/auto_npm.js"
   , "repository": {
