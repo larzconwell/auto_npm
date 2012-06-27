@@ -9,7 +9,7 @@
     , "version"
     , "control"
   ]
-  , "version": "0.0.4"
+  , "version": "0.0.3"
   , "author": "Larz Conwell <larzconwell@gmail.com>"
   , "bin": {
     "auto_npm": "./bin/auto_npm.js"
