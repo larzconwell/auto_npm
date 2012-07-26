@@ -17,7 +17,7 @@
   , "main": "./lib/auto_npm.js"
   , "repository": {
       "type": "git"
-    , "url": "git://github.com/larzconwell/auto-npm.git"
+    , "url": "git://github.com/larzconwell/auto_npm.git"
   }
   , "preferGlobal": true
   , "engines": {
