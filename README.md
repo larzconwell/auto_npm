@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/larzconwell/auto_npm.png)](http://travis-ci.org/larzconwell/auto_npm)
 Auto NPM
 --------
 
