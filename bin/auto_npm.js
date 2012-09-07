@@ -21,8 +21,7 @@ var cd       = process.cwd()
 //
 // Help dialog
 help = [
-    ''
-  , package.name + ' ' + package.version
+    package.name + ' ' + package.version
   , ''
   , 'Description'
   , '  ' + package.description
@@ -31,22 +30,23 @@ help = [
   , '  --enable, -e   # Enable Auto NPM in a git repo'
   , '  --force, -f    # Force Auto NPM to rewrite any existing Git hooks'
   , '  --disable, -d  # Disable Auto NPM in a git repo'
-  , '  --update, -u   # Updated the NPM package for the current repo'
+  , '  --update, -u   # Update the NPM package for the current repo'
   , '  --help, -h     # Dipslay this help dialog'
+  , ''
 ].join('\n');
 
 // Show help dialog if no args are given
-if(args.length === 0) {
+if (args.length <= 0) {
   console.log(help);
   process.exit(0);
 }
 
 //
 // Get arguments
-while(args.length) {
+while (args.length) {
   arg = args.shift();
 
-  switch(arg) {
+  switch (arg) {
     case '-h':
     case '--help':
       console.log(help);
@@ -73,25 +73,27 @@ while(args.length) {
 
 //
 // Check if directory is a Git repo
-gitDir = compat.existsSync(path.join(cd, '.git'));
-if(!gitDir) throw new Error('The Directory "' + cd + '" is not a git repo.');
+if (!compat.existsSync(path.join(cd, '.git'))) {
+  throw new Error('The Directory "' + cd + '" is not a git repo.');
+}
 
 //
 // If updating arg is set then we need to update NPM package
-if(updating) {
+if (updating) {
   runner.update();
 } else {
-  //
   // Enable Auto NPM or disable it
-  if(enabled) {
-    // If force is true send it as an options
+  if (enabled) {
     if(force) {
-      runner.enable({ force: true });
-    } else runner.enable();
+      runner.enable({force: true});
+    } else {
+      runner.enable();
+    }
   } else {
-    // If force is true send it as an options
-    if(force) {
-      runner.disable({ force: true });
-    } else runner.disable();
+    if (force) {
+      runner.disable({force: true});
+    } else {
+      runner.disable();
+    }
   }
 }
