@@ -19,4 +19,8 @@ auto_npm <command> [options]
 - `--help`, `-h` Display the help dialog
 
 
-_Note_: There hasn't been much success using `git commit -a`, but `git commit -m` works fine.
+###Notes
+- There hasn't been much success using `git commit -a` but `but commit -m` works most of the time.
+- When a commit includes `[publish]` it will increment your patch number, create Git tags and publish to NPM.
+- When you manually change your version number, it will create a Git tag and publish it to NPM.
+- Sometimes when it asks for your password when publishing it can be a bit iffy on your shell. Not sure why it's weird so it'll be fixed as soon as I found out how to.
