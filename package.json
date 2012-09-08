@@ -1,26 +1,26 @@
 {
-    "name": "auto_npm"
-  , "description": "Automatically updated NPM packages when you submit a commit that updates the version number in `package.json`"
-  , "keywords": [
-      "git"
-    , "commit"
-    , "auto"
-    , "update"
-    , "version"
-    , "control"
-  ]
-  , "version": "0.0.8"
-  , "author": "Larz Conwell <larzconwell@gmail.com>"
-  , "bin": {
+  "name": "auto_npm",
+  "description": "Automatically update NPM packages and create Git tags when your commit updates the version number or you include [publish] in the message",
+  "version": "0.0.8",
+  "keywords": [
+    "git",
+    "commit",
+    "auto",
+    "update",
+    "version",
+    "control"
+  ],
+  "author": "Larz Conwell <larzconwell@gmail.com>",
+  "bin": {
     "auto_npm": "./bin/auto_npm.js"
-  }
-  , "main": "./lib/auto_npm.js"
-  , "repository": {
-      "type": "git"
-    , "url": "git://github.com/larzconwell/auto_npm.git"
-  }
-  , "preferGlobal": true
-  , "engines": {
-    "node": "*"
+  },
+  "main": "./lib/auto_npm.js",
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/larzconwell/auto_npm.git"
+  },
+  "engines": {
+    "node": ">= 0.6"
   }
 }
