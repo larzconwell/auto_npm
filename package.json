@@ -1,7 +1,7 @@
 {
   "name": "auto_npm",
   "description": "Automatically update NPM packages and create Git tags when your commit updates the version number or you include [publish] in the message",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "keywords": [
     "git",
     "commit",
