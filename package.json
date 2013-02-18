@@ -1,7 +1,7 @@
 {
   "name": "auto_npm",
-  "description": "Automatically update NPM packages and create Git tags when your commit updates the version number or you include [publish] in the message",
-  "version": "0.0.10",
+  "description": "Automatically update NPM packages and create Git tags when a commit updates the version number or increment the number if you include [publish] in the commit message",
+  "version": "0.0.11",
   "keywords": [
     "git",
     "commit",
@@ -21,6 +21,6 @@
     "url": "git://github.com/larzconwell/auto_npm.git"
   },
   "engines": {
-    "node": ">= 0.6"
+    "node": "0.8.x"
   }
 }

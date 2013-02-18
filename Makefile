@@ -1,9 +1,9 @@
 .PHONY: install uninstall reinstall
 
 install:
-	@npm -g install .
+	@npm link
 
 uninstall:
-	@npm -g uninstall auto_npm
+	@npm -g unlink auto_npm
 
 reinstall: uninstall install

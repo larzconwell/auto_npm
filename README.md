@@ -1,7 +1,7 @@
 Auto NPM
 --------
 
-Automatically update NPM packages and create Git tags when your commit updates the version number or you include [publish] in the message
+Automatically update NPM packages and create Git tags when a commit updates the version number or increment the number if you include [publish] in the commit message
 
 ###Usage
 Auto NPM is a command line tool, it's very simple to use and once you enable it in a Git repo, you don't have to do anything at all to use it.
