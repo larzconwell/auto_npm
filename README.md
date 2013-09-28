@@ -25,4 +25,4 @@ auto_npm <command> [options]
 - `--help`, `-h` Display the help dialog
 
 ### Notes
-- There hasn't been much success using `git commit -a` but `but commit -m` works most of the time.
+- There hasn't been much success using `git commit -a` but `git commit -m` works most of the time.
